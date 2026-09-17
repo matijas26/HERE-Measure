@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>HERE Measure</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="https://js.api.here.com/v3/3.2/mapsjs-ui.css">
+  <link rel="stylesheet" href="./css/app.css">
+  <script defer src="./config.js"></script>
+  <script defer src="https://js.api.here.com/v3/3.2/mapsjs-core.js"></script>
+  <script defer src="https://js.api.here.com/v3/3.2/mapsjs-service.js"></script>
+  <script defer src="https://js.api.here.com/v3/3.2/mapsjs-mapevents.js"></script>
+  <script defer src="https://js.api.here.com/v3/3.2/mapsjs-ui.js"></script>
+  <script defer src="./js/map.js"></script>
+  <script defer src="./js/measurements.js"></script>
+  <script defer src="./js/drawing.js"></script>
+  <script defer src="./js/app.js"></script>
+</head>
+<body>
+  <header class="toolbar">
+    <h1>HERE Measure</h1>
+    <div class="tools" role="group" aria-label="Measurement tools">
+      <button type="button" data-mode="pan" aria-pressed="true" disabled>Pan</button>
+      <button type="button" data-mode="distance" aria-pressed="false" disabled>Distance</button>
+      <button type="button" data-mode="area" aria-pressed="false" disabled>Area</button>
+      <button type="button" data-mode="delete" aria-pressed="false" disabled>Delete</button>
+      <button type="button" id="clear" disabled>Clear</button>
+    </div>
+    <div id="area-actions" class="tools" role="group" aria-label="Unfinished polygon" hidden>
+      <button type="button" id="finish" disabled>Finish</button>
+      <button type="button" id="undo" disabled>Undo point</button>
+    </div>
+    <label for="map-type">View</label>
+    <select id="map-type" disabled>
+      <option value="satellite">Satellite</option>
+      <option value="hybrid">Hybrid</option>
+    </select>
+  </header>
+  <main>
+    <div id="map" aria-label="HERE satellite map"></div>
+    <div id="error" class="error" role="alert" hidden></div>
+    <noscript><p class="error">Enable JavaScript to load HERE Measure.</p></noscript>
+  </main>
+  <footer class="statusbar">
+    <output id="coordinates" aria-live="polite">Last click: —</output>
+    <output id="measurement" aria-live="polite">No area measured</output>
+    <span id="status" role="status">Loading HERE Maps…</span>
+  </footer>
+</body>
+</html>
