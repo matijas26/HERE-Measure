@@ -1,2 +1,1 @@
-# Browser configuration: supply this separately when publishing.
-/config.js
+# config.js is deliberately tracked for static GitHub Pages deployment.
